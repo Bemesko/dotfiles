@@ -41,7 +41,8 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 -- Chosen colors and buttons look alike adapta maia theme
-beautiful.init("/usr/share/awesome/themes/cesious/theme.lua")
+--beautiful.init("/usr/share/awesome/themes/cesious/theme.lua")
+beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 beautiful.icon_theme        = "Papirus-Dark"
 beautiful.bg_normal         = "#222D32"
 beautiful.bg_focus          = "#2C3940"
@@ -51,10 +52,11 @@ beautiful.font              = "Noto Sans Regular 10"
 beautiful.notification_font = "Noto Sans Bold 14"
 
 -- This is used later as the default terminal and editor to run.
-browser = "exo-open --launch WebBrowser" or "firefox"
+browser = "exo-open --launch WebBrowser" or "firefox" or "qutebrowser"
 filemanager = "exo-open --launch FileManager" or "thunar"
 gui_editor = "mousepad"
-terminal = "alacritty"
+terminal = "x-terminal-emulator" or "alacritty"
+editor = os.getenv("EDITOR") or "editor"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
