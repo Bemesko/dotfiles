@@ -60,3 +60,7 @@ format_on_save = true
 
 [[layers]]
 name = "default"
+
+[[layers]]
+name = 'lang#python'
+python_interpreter = '/usr/bin/python3.7'
