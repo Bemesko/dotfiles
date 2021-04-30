@@ -1,3 +1,8 @@
+-- AWESOME RC
+-- Coisas pra fazer
+-- - Conseguir exportar os temas junto com a pasta da config
+-- - Deixar os atalhos de abrir websites universais
+--
 -- Standard awesome library
 local gears = require("gears")
 local awful = require("awful")
