@@ -2,6 +2,10 @@
 -- Coisas pra fazer
 -- - Conseguir exportar os temas junto com a pasta da config
 -- - Deixar os atalhos de abrir websites universais
+-- - Deixar widgets mais universais
+-- -- Especialmente o de wifi
+-- Fazer o tutorial do DistroTube
+-- -- Instalar DMenu
 --
 -- Standard awesome library
 local gears = require("gears")
