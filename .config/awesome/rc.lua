@@ -14,7 +14,6 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 local freedesktop = require("freedesktop")
 -- Enable VIM help for hotkeys widget when client with matching name is opened:
 require("awful.hotkeys_popup.keys.vim")
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -41,8 +40,15 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 -- Chosen colors and buttons look alike adapta maia theme
---beautiful.init("/usr/share/awesome/themes/cesious/theme.lua")
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+-- beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
+-- beautiful.init("~/.config/awesome/themes/berb/theme.lua")
+-- beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
+-- Tô tentando experimentar com temas customizados mas tá difícil de deixar
+-- dinâmico pra mais de um PC
+
+-- local chosen_theme = "berb"
+
+beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 beautiful.icon_theme        = "Papirus-Dark"
 beautiful.bg_normal         = "#222D32"
 beautiful.bg_focus          = "#2C3940"
@@ -55,7 +61,7 @@ beautiful.notification_font = "Noto Sans Bold 14"
 browser = "exo-open --launch WebBrowser" or "firefox" or "qutebrowser"
 filemanager = "exo-open --launch FileManager" or "thunar"
 gui_editor = "mousepad"
-terminal = "x-terminal-emulator" or "alacritty"
+terminal = "alacritty" or os.getenv("TERM")
 editor = os.getenv("EDITOR") or "editor"
 
 -- Default modkey.
