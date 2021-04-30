@@ -58,10 +58,12 @@ beautiful.font              = "Noto Sans Regular 10"
 beautiful.notification_font = "Noto Sans Bold 14"
 
 -- This is used later as the default terminal and editor to run.
-browser = "exo-open --launch WebBrowser" or "firefox" or "qutebrowser"
-filemanager = "exo-open --launch FileManager" or "thunar"
+-- Para mudar os valores das variáveis de ambiente, exportar elas
+-- no arquivo ~/.profile
+browser = os.getenv("BROWSER") or "firefox" --"exo-open --launch WebBrowser" or "firefox" or "qutebrowser"
+filemanager = os.getenv("FILEMANAGER") or "thunar" --"exo-open --launch FileManager" or "thunar"
 gui_editor = "mousepad"
-terminal = "alacritty" or os.getenv("TERM")
+terminal = os.getenv("TERMINAL") or "x-terminal-emulator"
 editor = os.getenv("EDITOR") or "editor"
 
 -- Default modkey.

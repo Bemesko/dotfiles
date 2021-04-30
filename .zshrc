@@ -211,9 +211,6 @@ export PATH=$NODEJS_HOME:$PATH
 # VSCode
 export PATH="/opt/VSCode-linux-x64:$PATH"
 
-# Terminal
-export TERMINAL="/usr/bin/alacritty"
-
 # Enables vim mode
 bindkey -v
 alias config='/usr/bin/git --git-dir=/home/bemesko/dotfiles --work-tree=/home/bemesko'
