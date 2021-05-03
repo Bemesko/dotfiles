@@ -50,14 +50,14 @@ end
 -- Themes define colours, icons, font and wallpapers.
 -- Chosen colors and buttons look alike adapta maia theme
 -- beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
--- beautiful.init("~/.config/awesome/themes/berb/theme.lua")
 -- beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
+-- beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 -- Tô tentando experimentar com temas customizados mas tá difícil de deixar
 -- dinâmico pra mais de um PC
 
 -- local chosen_theme = "berb"
 
-beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+beautiful.init("/home/" .. os.getenv("USER") .. "/.config/awesome/themes/berb/theme.lua")
 beautiful.icon_theme        = "Papirus-Dark"
 beautiful.bg_normal         = "#222D32"
 beautiful.bg_focus          = "#2C3940"
