@@ -79,7 +79,7 @@ theme.titlebar_maximized_button_focus_inactive  = themes_path .. "berb/titlebar/
 theme.titlebar_maximized_button_normal_active   = themes_path .. "berb/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active    = themes_path .. "berb/titlebar/maximized_focus_active.png"
 
-theme.wallpaper = themes_path .. "/berb/link.jpg"
+-- theme.wallpaper = themes_path .. "/berb/link.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh      = themes_path .. "berb/layouts/fairh.png"
