@@ -40,3 +40,6 @@ fi
 run picom --shadow-exclude '!focused'
 run blueman-applet
 run msm_notifier
+
+# wallpapers
+run nitrogen --set-zoom-fill --random ~/imgs/wallpapers

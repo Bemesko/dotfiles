@@ -707,5 +707,7 @@ end
 --    end
 --end)
 
-awful.spawn.with_shell("~/.config/awesome/autorun.sh")
+-- Gaps
+beautiful.useless_gap = 3
 
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
