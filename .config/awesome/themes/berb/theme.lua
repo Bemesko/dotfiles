@@ -5,7 +5,8 @@
 --]]
 
 -- local themes_path = require("gears.filesystem").get_themes_dir()
-local themes_path = string.format("%s/.config/awesome/themes", os.getenv("HOME"))
+local themes_path = string.format("%s/.config/awesome/themes/", os.getenv("HOME"))
+-- local themes_path = "/home/" .. os.getenv("USER") .. ".config/awesome/themes"
 theme = {}
 
 theme.font              = "Noto Sans Regular 10"
