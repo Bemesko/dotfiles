@@ -42,4 +42,5 @@ run blueman-applet
 run msm_notifier
 
 # wallpapers
-run nitrogen --set-zoom-fill --random ~/imgs/wallpapers
+run nitrogen --head=0 --set-zoom-fill --random ~/imgs/wallpapers
+run nitrogen --head=1 --set-zoom-fill --random ~/imgs/wallpapers
