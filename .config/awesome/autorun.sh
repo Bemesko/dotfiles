@@ -36,8 +36,7 @@ if (command -v system-config-printer-applet && ! pgrep applet.py ); then
   system-config-printer-applet &
 fi
 
-# picom comentado por causa do efeito horrível de transparência
-run picom --shadow-exclude '!focused'
+run picom --shadow-exclude '!focused' || compton --shadow-exclude '!focused'
 run blueman-applet
 run msm_notifier
 
