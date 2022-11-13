@@ -10,5 +10,5 @@ that is or want a refresher,
 see [this video](https://www.youtube.com/watch?v=tBoLDpTWVOM).
 
 After cloning the repository (and fixing potential file conflicts, specially
-with .bashrc and .gitconfig), feel free to use the [.scripts/install_config_dependencies.sh]
+with .bashrc and .gitconfig), feel free to use the [install_config_dependencies](.scripts/install_config_dependencies.sh)
 script if there's anything broken.
