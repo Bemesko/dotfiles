@@ -1,11 +1,14 @@
-# Dotfiles do Bernardo!
+# My dotfiles
 
-Isso mesmo.
+This repository is a compilation of all my config files for linux-related uses. 
+Useful because I tend to wanna install Linux on everything I touch.
 
-## Dependências das configs
-(A maioria delas podem ser encontradas no `autorun.sh`)
+## Installing
 
-- nm-applet (pro ícone de wifi)
-- xfce4-power-manager (para mostrar a bateria restante)
-  - Depois de instalar tem que habilitar o ícone de bandeja usando `xfce4-power-manager-settings`
-- nitrogen (pros wallpapers)
+This is intended to be used as a git bare repository. If you don't know what
+that is or want a refresher, 
+see [this video](https://www.youtube.com/watch?v=tBoLDpTWVOM).
+
+After cloning the repository (and fixing potential file conflicts, specially
+with .bashrc and .gitconfig), feel free to use the [.scripts/install_config_dependencies.sh]
+script if there's anything broken.
