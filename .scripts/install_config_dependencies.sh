@@ -19,7 +19,7 @@ fi
 cd "$(dirname "$0")"
 
 install_pfetch() {
-	if [[ ! -x $(command -v fetch) ]]; then
+	if [[ ! -x $(command -v pfetch) ]]; then
 		echo 'pfetch is not installed. Installing...'
 		git clone git@github.com:dylanaraps/pfetch.git
 		chmod +x pfetch/pfetch
