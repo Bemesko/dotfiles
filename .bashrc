@@ -99,4 +99,4 @@ pfetch
 
 # sets nvim to default editor
 export EDITOR="/usr/bin/nvim"
-export PATH="~/.scripts:$PATH"
+export PATH="~/dev/.scripts:$PATH"

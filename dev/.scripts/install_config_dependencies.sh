@@ -18,6 +18,8 @@ fi
 
 cd "$(dirname "$0")"
 
+local mistake='a'
+
 install_pfetch() {
 	if [[ ! -x $(command -v pfetch) ]]; then
 		echo 'pfetch is not installed. Installing...'
