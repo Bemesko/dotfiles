@@ -20,4 +20,4 @@ Set-Alias -Name ll -Value Get-ChildItemColor
 Set-PSReadLineOption -PredictionViewStyle list
 
 # Start oh my posh
-oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/half-life.omp.json" | Invoke-Expression
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/cloud-context.omp.json" | Invoke-Expression
