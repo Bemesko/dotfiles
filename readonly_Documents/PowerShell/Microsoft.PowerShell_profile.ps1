@@ -1,0 +1,1 @@
+. ~/.config/pwsh.ps1
