@@ -38,7 +38,7 @@
         "defaults": {
             "colorScheme": "Dracula",
             "font": {
-                "face": "MesloLGL Nerd Font Mono",
+                "face": "MesloLGLMZ Nerd Font Mono",
                 "size": 10.0
             },
             "opacity": 70,
