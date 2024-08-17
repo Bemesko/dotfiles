@@ -1,11 +1,9 @@
 {
     "$help": "https://aka.ms/terminal-documentation",
     "$schema": "https://aka.ms/terminal-profiles-schema",
-    "actions": 
-    [
+    "actions": [
         {
-            "command": 
-            {
+            "command": {
                 "action": "splitPane",
                 "split": "auto",
                 "splitMode": "duplicate"
@@ -21,8 +19,7 @@
             "keys": "ctrl+v"
         },
         {
-            "command": 
-            {
+            "command": {
                 "action": "copy",
                 "singleLine": false
             },
@@ -31,37 +28,57 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{51855cb2-8cce-5362-8f54-464b92b32386}",
-    "newTabMenu": 
-    [
+    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "newTabMenu": [
         {
             "type": "remainingProfiles"
         }
     ],
-    "profiles": 
-    {
-        "defaults": 
-        {
+    "profiles": {
+        "defaults": {
             "colorScheme": "Dracula",
-            "font": 
-            {
-                "face": "MesloLGL NFM",
+            "font": {
+                "face": "MesloLGL Nerd Font Mono",
                 "size": 10.0
             },
             "opacity": 70,
             "useAcrylic": true
         },
-        "list": 
-        [
+        "list": [
             {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
                 "name": "Windows PowerShell"
             },
             {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
                 "name": "Prompt de comando"
+            },
+            {
+                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "hidden": false,
+                "name": "PowerShell",
+                "source": "Windows.Terminal.PowershellCore",
+                "experimental.retroTerminalEffect": false,
+                "intenseTextStyle": "bold",
+                "adjustIndistinguishableColors": "never",
+                "colorScheme": "tokyonight"
+            },
+            {
+                "adjustIndistinguishableColors": "always",
+                "colorScheme": "Tango Light",
+                "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
+                "elevate": true,
+                "experimental.retroTerminalEffect": false,
+                "guid": "{1ef883d6-5b6a-4747-ae82-1320bca31f14}",
+                "hidden": false,
+                "icon": "ms-appx:///ProfileIcons/pwsh.png",
+                "intenseTextStyle": "bold",
+                "name": "PowerShell (Admin)",
+                "startingDirectory": "%USERPROFILE%"
             },
             {
                 "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
@@ -82,37 +99,10 @@
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "adjustIndistinguishableColors": "never",
-                "colorScheme": "tokyonight",
-                "experimental.retroTerminalEffect": false,
-                "font": 
-                {
-                    "face": "MesloLGLDZ NFM",
-                    "weight": "normal"
-                },
-                "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+                "guid": "{62ba5d0f-ebcd-5290-9df2-e00aab643bb2}",
                 "hidden": false,
-                "intenseTextStyle": "bold",
-                "name": "PowerShell",
-                "source": "Windows.Terminal.PowershellCore"
-            },
-            {
-                "adjustIndistinguishableColors": "never",
-                "colorScheme": "Tango Light",
-                "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
-                "elevate": true,
-                "experimental.retroTerminalEffect": false,
-                "font": 
-                {
-                    "face": "MesloLGLDZ NFM",
-                    "weight": "normal"
-                },
-                "guid": "{1ef883d6-5b6a-4747-ae82-1320bca31f14}",
-                "hidden": false,
-                "icon": "ms-appx:///ProfileIcons/pwsh.png",
-                "intenseTextStyle": "bold",
-                "name": "PowerShell (Admin)",
-                "startingDirectory": "%USERPROFILE%"
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
@@ -128,8 +118,7 @@
             }
         ]
     },
-    "schemes": 
-    [
+    "schemes": [
         {
             "background": "#0C0C0C",
             "black": "#0C0C0C",
@@ -177,6 +166,7 @@
             "yellow": "#C19C00"
         },
         {
+            "name": "Dracula",
             "background": "#282A36",
             "black": "#21222C",
             "blue": "#BD93F9",
@@ -192,7 +182,6 @@
             "cyan": "#8BE9FD",
             "foreground": "#F8F8F2",
             "green": "#50FA7B",
-            "name": "Dracula",
             "purple": "#FF79C6",
             "red": "#FF5555",
             "selectionBackground": "#44475A",
@@ -407,6 +396,7 @@
             "yellow": "#808000"
         },
         {
+            "name": "tokyonight",
             "background": "#1A1B26",
             "black": "#15161E",
             "blue": "#7AA2F7",
@@ -422,7 +412,6 @@
             "cyan": "#7DCFFF",
             "foreground": "#C0CAF5",
             "green": "#9ECE6A",
-            "name": "tokyonight",
             "purple": "#BB9AF7",
             "red": "#F7768E",
             "selectionBackground": "#33467C",
