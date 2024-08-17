@@ -1,1 +1,1 @@
-. ~/.config/pwsh.ps1
+. "~/.config/pwsh/profile.ps1"
