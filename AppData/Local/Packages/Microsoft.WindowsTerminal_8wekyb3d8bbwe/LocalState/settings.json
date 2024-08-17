@@ -38,7 +38,7 @@
         "defaults": {
             "colorScheme": "Dracula",
             "font": {
-                "face": "MesloLGLMZ Nerd Font Mono",
+                "face": "MesloLGLDZ Nerd Font Mono",
                 "size": 10.0
             },
             "opacity": 70,
@@ -70,7 +70,7 @@
             {
                 "adjustIndistinguishableColors": "always",
                 "colorScheme": "Tango Light",
-                "commandline": "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
                 "elevate": true,
                 "experimental.retroTerminalEffect": false,
                 "guid": "{1ef883d6-5b6a-4747-ae82-1320bca31f14}",
