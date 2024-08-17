@@ -4,4 +4,12 @@ name = AzureCloud
 [core]
 first_run = yes
 output = yamlc
+collect_telemetry = no
+allow_broker = true
+
+[bicep]
+use_binary_from_path = false
+
+[defaults]
+group = 
 
