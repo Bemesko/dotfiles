@@ -1,29 +1,16 @@
-# Copyright 2016 The Kubernetes Authors.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# powershell completion for kubectl                              -*- shell-script -*-
+# powershell completion for chezmoi                              -*- shell-script -*-
 
-function __kubectl_debug {
+function __chezmoi_debug {
     if ($env:BASH_COMP_DEBUG_FILE) {
         "$args" | Out-File -Append -FilePath "$env:BASH_COMP_DEBUG_FILE"
     }
 }
 
-filter __kubectl_escapeStringWithSpecialChars {
+filter __chezmoi_escapeStringWithSpecialChars {
     $_ -replace '\s|#|@|\$|;|,|''|\{|\}|\(|\)|"|`|\||<|>|&', '`$&'
 }
 
-[scriptblock]$__kubectlCompleterBlock = {
+[scriptblock]${__chezmoiCompleterBlock} = {
     param(
         $WordToComplete,
         $CommandAst,
@@ -34,9 +21,9 @@ filter __kubectl_escapeStringWithSpecialChars {
     $Command = $CommandAst.CommandElements
     $Command = "$Command"
 
-    __kubectl_debug ""
-    __kubectl_debug "========= starting completion logic =========="
-    __kubectl_debug "WordToComplete: $WordToComplete Command: $Command CursorPosition: $CursorPosition"
+    __chezmoi_debug ""
+    __chezmoi_debug "========= starting completion logic =========="
+    __chezmoi_debug "WordToComplete: $WordToComplete Command: $Command CursorPosition: $CursorPosition"
 
     # The user could have moved the cursor backwards on the command-line.
     # We need to trigger completion from the $CursorPosition location, so we need
@@ -46,20 +33,21 @@ filter __kubectl_escapeStringWithSpecialChars {
     if ($Command.Length -gt $CursorPosition) {
         $Command = $Command.Substring(0, $CursorPosition)
     }
-    __kubectl_debug "Truncated command: $Command"
+    __chezmoi_debug "Truncated command: $Command"
 
     $ShellCompDirectiveError = 1
     $ShellCompDirectiveNoSpace = 2
     $ShellCompDirectiveNoFileComp = 4
     $ShellCompDirectiveFilterFileExt = 8
     $ShellCompDirectiveFilterDirs = 16
+    $ShellCompDirectiveKeepOrder = 32
 
     # Prepare the command to request completions for the program.
     # Split the command at the first space to separate the program and arguments.
     $Program, $Arguments = $Command.Split(" ", 2)
 
-    $RequestComp = "$Program __complete $Arguments"
-    __kubectl_debug "RequestComp: $RequestComp"
+    $RequestComp = "$Program __completeNoDesc $Arguments"
+    __chezmoi_debug "RequestComp: $RequestComp"
 
     # we cannot use $WordToComplete because it
     # has the wrong values if the cursor was moved
@@ -67,13 +55,13 @@ filter __kubectl_escapeStringWithSpecialChars {
     if ($WordToComplete -ne "" ) {
         $WordToComplete = $Arguments.Split(" ")[-1]
     }
-    __kubectl_debug "New WordToComplete: $WordToComplete"
+    __chezmoi_debug "New WordToComplete: $WordToComplete"
 
 
     # Check for flag with equal sign
     $IsEqualFlag = ($WordToComplete -Like "--*=*" )
     if ( $IsEqualFlag ) {
-        __kubectl_debug "Completing equal sign flag"
+        __chezmoi_debug "Completing equal sign flag"
         # Remove the flag part
         $Flag, $WordToComplete = $WordToComplete.Split("=", 2)
     }
@@ -81,14 +69,24 @@ filter __kubectl_escapeStringWithSpecialChars {
     if ( $WordToComplete -eq "" -And ( -Not $IsEqualFlag )) {
         # If the last parameter is complete (there is a space following it)
         # We add an extra empty parameter so we can indicate this to the go method.
-        __kubectl_debug "Adding extra empty parameter"
-        # We need to use `"`" to pass an empty argument a "" or '' does not work!!!
-        $RequestComp = "$RequestComp" + ' `"`"'
+        __chezmoi_debug "Adding extra empty parameter"
+        # PowerShell 7.2+ changed the way how the arguments are passed to executables,
+        # so for pre-7.2 or when Legacy argument passing is enabled we need to use
+        # `"`" to pass an empty argument, a "" or '' does not work!!!
+        if ($PSVersionTable.PsVersion -lt [version]'7.2.0' -or
+            ($PSVersionTable.PsVersion -lt [version]'7.3.0' -and -not [ExperimentalFeature]::IsEnabled("PSNativeCommandArgumentPassing")) -or
+            (($PSVersionTable.PsVersion -ge [version]'7.3.0' -or [ExperimentalFeature]::IsEnabled("PSNativeCommandArgumentPassing")) -and
+            $PSNativeCommandArgumentPassing -eq 'Legacy')) {
+            $RequestComp = "$RequestComp" + ' `"`"'
+        }
+        else {
+            $RequestComp = "$RequestComp" + ' ""'
+        }
     }
 
-    __kubectl_debug "Calling $RequestComp"
+    __chezmoi_debug "Calling $RequestComp"
     # First disable ActiveHelp which is not supported for Powershell
-    $env:KUBECTL_ACTIVE_HELP = 0
+    ${env:CHEZMOI_ACTIVE_HELP} = 0
 
     #call the command store the output in $out and redirect stderr and stdout to null
     # $Out is an array contains each line per element
@@ -100,23 +98,23 @@ filter __kubectl_escapeStringWithSpecialChars {
         # There is no directive specified
         $Directive = 0
     }
-    __kubectl_debug "The completion directive is: $Directive"
+    __chezmoi_debug "The completion directive is: $Directive"
 
     # remove directive (last element) from out
     $Out = $Out | Where-Object { $_ -ne $Out[-1] }
-    __kubectl_debug "The completions are: $Out"
+    __chezmoi_debug "The completions are: $Out"
 
     if (($Directive -band $ShellCompDirectiveError) -ne 0 ) {
         # Error code.  No completion.
-        __kubectl_debug "Received error from custom completion go code"
+        __chezmoi_debug "Received error from custom completion go code"
         return
     }
 
     $Longest = 0
-    $Values = $Out | ForEach-Object {
+    [Array]$Values = $Out | ForEach-Object {
         #Split the output in name and description
         $Name, $Description = $_.Split("`t", 2)
-        __kubectl_debug "Name: $Name Description: $Description"
+        __chezmoi_debug "Name: $Name Description: $Description"
 
         # Look for the longest completion so that we can format things nicely
         if ($Longest -lt $Name.Length) {
@@ -135,13 +133,13 @@ filter __kubectl_escapeStringWithSpecialChars {
     $Space = " "
     if (($Directive -band $ShellCompDirectiveNoSpace) -ne 0 ) {
         # remove the space here
-        __kubectl_debug "ShellCompDirectiveNoSpace is called"
+        __chezmoi_debug "ShellCompDirectiveNoSpace is called"
         $Space = ""
     }
 
     if ((($Directive -band $ShellCompDirectiveFilterFileExt) -ne 0 ) -or
        (($Directive -band $ShellCompDirectiveFilterDirs) -ne 0 )) {
-        __kubectl_debug "ShellCompDirectiveFilterFileExt ShellCompDirectiveFilterDirs are not supported"
+        __chezmoi_debug "ShellCompDirectiveFilterFileExt ShellCompDirectiveFilterDirs are not supported"
 
         # return here to prevent the completion of the extensions
         return
@@ -153,13 +151,18 @@ filter __kubectl_escapeStringWithSpecialChars {
 
         # Join the flag back if we have an equal sign flag
         if ( $IsEqualFlag ) {
-            __kubectl_debug "Join the equal sign flag back to the completion value"
+            __chezmoi_debug "Join the equal sign flag back to the completion value"
             $_.Name = $Flag + "=" + $_.Name
         }
     }
 
+    # we sort the values in ascending order by name if keep order isn't passed
+    if (($Directive -band $ShellCompDirectiveKeepOrder) -eq 0 ) {
+        $Values = $Values | Sort-Object -Property Name
+    }
+
     if (($Directive -band $ShellCompDirectiveNoFileComp) -ne 0 ) {
-        __kubectl_debug "ShellCompDirectiveNoFileComp is called"
+        __chezmoi_debug "ShellCompDirectiveNoFileComp is called"
 
         if ($Values.Length -eq 0) {
             # Just print an empty string here so the
@@ -173,7 +176,7 @@ filter __kubectl_escapeStringWithSpecialChars {
 
     # Get the current mode
     $Mode = (Get-PSReadLineKeyHandler | Where-Object { $_.Key -eq "Tab" }).Function
-    __kubectl_debug "Mode: $Mode"
+    __chezmoi_debug "Mode: $Mode"
 
     $Values | ForEach-Object {
 
@@ -198,10 +201,10 @@ filter __kubectl_escapeStringWithSpecialChars {
             "Complete" {
 
                 if ($Values.Length -eq 1) {
-                    __kubectl_debug "Only one completion left"
+                    __chezmoi_debug "Only one completion left"
 
                     # insert space after value
-                    [System.Management.Automation.CompletionResult]::new($($comp.Name | __kubectl_escapeStringWithSpecialChars) + $Space, "$($comp.Name)", 'ParameterValue', "$($comp.Description)")
+                    [System.Management.Automation.CompletionResult]::new($($comp.Name | __chezmoi_escapeStringWithSpecialChars) + $Space, "$($comp.Name)", 'ParameterValue', "$($comp.Description)")
 
                 }
                 else {
@@ -227,7 +230,7 @@ filter __kubectl_escapeStringWithSpecialChars {
                 # insert space after value
                 # MenuComplete will automatically show the ToolTip of
                 # the highlighted value at the bottom of the suggestions.
-                [System.Management.Automation.CompletionResult]::new($($comp.Name | __kubectl_escapeStringWithSpecialChars) + $Space, "$($comp.Name)", 'ParameterValue', "$($comp.Description)")
+                [System.Management.Automation.CompletionResult]::new($($comp.Name | __chezmoi_escapeStringWithSpecialChars) + $Space, "$($comp.Name)", 'ParameterValue', "$($comp.Description)")
             }
 
             # TabCompleteNext and in case we get something unknown
@@ -235,10 +238,11 @@ filter __kubectl_escapeStringWithSpecialChars {
                 # Like MenuComplete but we don't want to add a space here because
                 # the user need to press space anyway to get the completion.
                 # Description will not be shown because that's not possible with TabCompleteNext
-                [System.Management.Automation.CompletionResult]::new($($comp.Name | __kubectl_escapeStringWithSpecialChars), "$($comp.Name)", 'ParameterValue', "$($comp.Description)")
+                [System.Management.Automation.CompletionResult]::new($($comp.Name | __chezmoi_escapeStringWithSpecialChars), "$($comp.Name)", 'ParameterValue', "$($comp.Description)")
             }
         }
 
     }
 }
-Register-ArgumentCompleter -CommandName 'kubectl' -ScriptBlock $__kubectlCompleterBlock
+
+Register-ArgumentCompleter -CommandName 'chezmoi' -ScriptBlock ${__chezmoiCompleterBlock}
