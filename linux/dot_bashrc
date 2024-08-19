@@ -115,4 +115,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Source Nix profile
+if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
+
 eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/cloud-context.omp.json)"

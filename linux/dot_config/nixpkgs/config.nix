@@ -5,7 +5,7 @@
     myPackages = pkgs.buildEnv {
       name = "my-packages";
       paths = [
-        azure-cli
+        # azure-cli
         chezmoi
         docker
         fzf
@@ -20,8 +20,8 @@
         python3
         terraform
         tmux
+        xclip
       ];
-      pathsToLink = [ "/share" "/bin" ];
     };
   };
 }
