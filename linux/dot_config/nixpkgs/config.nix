@@ -25,7 +25,6 @@
         python312
         python312Packages.pip
         python312Packages.ansible-core
-        python312Packages.psycopg2
         terraform
         tmux
         xclip
