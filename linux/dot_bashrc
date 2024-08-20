@@ -2,11 +2,17 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# source blesh
+[[ $- == *i* ]] && source "$(blesh-share)"/ble.sh --noattach
+
 # If not running interactively, don't do anything
 case $- in
 *i*) ;;
 *) return ;;
 esac
+
+# enable vi mode
+set -o vi
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -121,3 +127,5 @@ if [ -e "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
 fi
 
 eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/cloud-context.omp.json)"
+
+[[ ${BLE_VERSION-} ]] && ble-attach
