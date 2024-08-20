@@ -5,7 +5,7 @@
     myPackages = pkgs.buildEnv {
       name = "my-packages";
       paths = [
-        azure-cli
+        # azure-cli
         bash-completion
         blesh
         chezmoi
