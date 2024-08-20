@@ -6,6 +6,7 @@
       name = "my-packages";
       paths = [
         # azure-cli
+        bash-completion
         blesh
         chezmoi
         docker
