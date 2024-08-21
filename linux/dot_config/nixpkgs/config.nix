@@ -27,7 +27,6 @@
         python312Packages.ansible-core
         terraform
         tmux
-        xsel
       ];
     };
   };
