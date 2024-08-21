@@ -126,6 +126,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Needed for nvim to detect xclip on Windows 10 WSL
+if [ -z "$DISPLAY" ]; then
+    export DISPLAY="$(hostname).local:0"
+fi
+
 eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/cloud-context.omp.json)"
 
 [[ ${BLE_VERSION-} ]] && ble-attach
