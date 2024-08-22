@@ -50,13 +50,12 @@ live_config_reload = true
 # Default: "None"
 
 # Example:
-
 # [shell]
 # program = "/bin/zsh"
 # args = ["-l"]
 
 [shell]
-program = "ubuntu"
+program = "ubuntu2204"
 
 
 # ENV
@@ -172,8 +171,10 @@ title = "Alacritty"
 dynamic_title = true 
 decorations_theme_variant = "None"
 decorations = "Full"
-opacity = 0.9
+opacity = 0.95
 blur = true 
+padding = { x = 4 , y = 0 }
+dynamic_padding = true
 
 
 # SCROLLING
@@ -230,8 +231,8 @@ multiplier = 3
 # Default: true
 
 [font]
-normal = { family = "MessloLGL NFM"}
-size = 10
+normal = { family = "MesloLGM Nerd Font Mono"}
+size = 12
 builtin_box_drawing = true 
 
 # COLORS
