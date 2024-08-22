@@ -26,6 +26,7 @@
         python312
         python312Packages.pip
         python312Packages.ansible-core
+        ripgrep
         terraform
         tmux
       ];
