@@ -10,6 +10,7 @@
         blesh
         chezmoi
         docker
+        fd
         fzf
         jqp
         k9s
