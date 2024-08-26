@@ -29,6 +29,7 @@
         ripgrep
         terraform
         tmux
+        wsl-open
       ];
     };
   };
