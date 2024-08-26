@@ -229,7 +229,7 @@ multiplier = 3
 # Default: true
 
 [font]
-normal = { family = "MessloLGL NFM" }
+normal = { family = "MesloLGL NFM" }
 size = 10
 builtin_box_drawing = true
 
