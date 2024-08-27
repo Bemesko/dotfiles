@@ -8,6 +8,7 @@
         # azure-cli
         bash-completion
         blesh
+        cargo
         chezmoi
         docker
         fd
@@ -27,6 +28,7 @@
         python312Packages.pip
         python312Packages.ansible-core
         ripgrep
+        rustc
         terraform
         tmux
         wsl-open
