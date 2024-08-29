@@ -10,6 +10,7 @@
         blesh
         cargo
         chezmoi
+        clippy
         # docker
         fd
         fzf
