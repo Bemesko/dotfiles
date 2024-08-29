@@ -9,7 +9,7 @@
         bash-completion
         blesh
         chezmoi
-        docker
+        # docker
         fd
         fzf
         jqp
@@ -29,6 +29,7 @@
         ripgrep
         terraform
         tmux
+        xsel
       ];
     };
   };
