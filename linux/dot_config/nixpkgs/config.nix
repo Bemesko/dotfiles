@@ -10,7 +10,7 @@
         blesh
         cargo
         chezmoi
-        docker
+        # docker
         fd
         fzf
         jqp
@@ -32,6 +32,7 @@
         terraform
         tmux
         wsl-open
+        xsel
       ];
     };
   };
