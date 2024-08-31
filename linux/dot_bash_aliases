@@ -9,3 +9,5 @@ alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold 
 
 # Kubernetes
 alias ku="kubectl"
+
+alias e="explorer.exe"
