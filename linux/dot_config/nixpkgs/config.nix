@@ -8,8 +8,10 @@
         # azure-cli
         bash-completion
         blesh
+        cargo
         chezmoi
-        docker
+        clippy
+        # docker
         fd
         fzf
         jqp
@@ -27,8 +29,11 @@
         python312Packages.pip
         python312Packages.ansible-core
         ripgrep
+        rustc
         terraform
         tmux
+        wsl-open
+        xsel
       ];
     };
   };
