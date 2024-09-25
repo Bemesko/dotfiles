@@ -65,7 +65,8 @@ program = "ubuntu2204"
 # [env]
 # WINIT_X11_SCALE_FACTOR = "1.0"
 
-#[env]
+[env]
+TERM = "alacritty-256color"
 
 
 # WINDOW
@@ -494,8 +495,7 @@ thickness = 0.15
 # ]
 
 [mouse]
-hide_when_typing = false
-
+hide_when_typing = true
 
 # HINTS
 # This section documents the [hints] table of the configuration file.
