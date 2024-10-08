@@ -5,13 +5,13 @@
     myPackages = pkgs.buildEnv {
       name = "my-packages";
       paths = [
-        # azure-cli
+        # azure-cli has some authentication issues
         bash-completion
         blesh
         cargo
         chezmoi
         clippy
-        # docker
+        # docker is already installed on WSL
         fd
         fzf
         jqp
@@ -32,6 +32,7 @@
         rustc
         terraform
         tmux
+        unzipNLS
         wsl-open
         xsel
       ];
