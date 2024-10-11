@@ -6,6 +6,7 @@
       name = "my-packages";
       paths = [
         # azure-cli has some authentication issues
+        awscli2
         bash-completion
         blesh
         cargo
