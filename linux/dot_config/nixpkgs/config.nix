@@ -26,7 +26,7 @@
         neovim
         nodejs_22
         oh-my-posh
-        podman
+        # podman
         python312
         python312Packages.pip
         python312Packages.ansible-core
