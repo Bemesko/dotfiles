@@ -22,6 +22,7 @@
         kubectx
         kubelogin
         kubernetes-helm
+        kubernetes-helmPlugins.helm-diff
         lazygit
         neovim
         nodejs_22
