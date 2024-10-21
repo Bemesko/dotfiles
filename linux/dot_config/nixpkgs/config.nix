@@ -7,6 +7,7 @@
       paths = [
         # azure-cli has some authentication issues
         awscli2
+        aws-iam-authenticator
         bash-completion
         blesh
         cargo
