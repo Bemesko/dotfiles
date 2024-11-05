@@ -1,5 +1,7 @@
 CURRENT_DATE=$(date +"%Y-%m-%d")
 
+export ZK_NOTEBOOK_DIR='/home/bernardo/dev/borbsidian'
+
 # Directories I usually go to
 alias dev="cd ~/dev"
 
