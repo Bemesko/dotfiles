@@ -39,6 +39,7 @@
         unzipNLS
         wsl-open
         xsel
+        zk
       ];
     };
   };
