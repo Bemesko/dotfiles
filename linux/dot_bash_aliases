@@ -1,9 +1,14 @@
 CURRENT_DATE=$(date +"%Y-%m-%d")
 
+export DEV_DIR='/home/bernardo/dev'
+export VETTA_PIPELINE_DIR='/home/bernardo/dev/vettadigital/Vetta/platform-vetta-automation'
+export SMS_PIPELINE_DIR='/home/bernardo/dev/sms-digital/Tech SMS/platform-sms-automation'
 export ZK_NOTEBOOK_DIR='/home/bernardo/dev/borbsidian'
 
 # Directories I usually go to
-alias dev="cd ~/dev"
+alias dev='cd $DEV_DIR'
+alias pvetta='cd $VETTA_PIPELINE_DIR'
+alias psms='cd $SMS_PIPELINE_DIR'
 
 # Zettelkasten
 alias ob='nvim /mnt/g/Meu\ Drive/Obsidian/borbsidian/periodic/daily/${CURRENT_DATE}.md'
