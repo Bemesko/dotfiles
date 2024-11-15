@@ -34,7 +34,7 @@
         tmux
         wslu
         xsel
-        xdg-utils
+        # xdg-utils
       ];
     };
   };
