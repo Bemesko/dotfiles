@@ -1,3 +1,5 @@
+alias xdg-open="wslview"
+
 # Directories I usually go to
 alias dev="cd ~/dev"
 
