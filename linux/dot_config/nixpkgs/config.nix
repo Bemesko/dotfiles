@@ -32,8 +32,9 @@
         rustc
         terraform
         tmux
-        wsl-open
+        wslu
         xsel
+        xdg-utils
       ];
     };
   };
