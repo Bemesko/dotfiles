@@ -132,6 +132,6 @@ fi
 export EDITOR="nvim"
 export PATH="$PATH:~/.cargo/bin/"
 
-eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/cloud-context.omp.json)"
+eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/gruvbox-dark.omp.json)"
 
 [[ ${BLE_VERSION-} ]] && ble-attach
