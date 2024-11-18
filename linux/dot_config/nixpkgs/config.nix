@@ -39,6 +39,7 @@
         unzipNLS
         wslu
         xsel
+        xdg-utils
         zk
       ];
     };
