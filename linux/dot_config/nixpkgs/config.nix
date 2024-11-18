@@ -37,7 +37,7 @@
         terraform
         tmux
         unzipNLS
-        wsl-open
+        wslu
         xsel
         zk
       ];
