@@ -1,12 +1,16 @@
 CURRENT_DATE=$(date +"%Y-%m-%d")
 
 export DEV_DIR='/home/bernardo/dev'
-export VETTA_PIPELINE_DIR='/home/bernardo/dev/vettadigital/Vetta/platform-vetta-automation'
-export SMS_PIPELINE_DIR="/home/bernardo/dev/sms-digital/Tech\ SMS/platform-sms-automation"
-export ZK_NOTEBOOK_DIR='/home/bernardo/dev/borbsidian'
+export ZK_NOTEBOOK_DIR="$DEV_DIR/borbsidian"
+export VETTA_ORG_DIR="$DEV_DIR/vettadigital/"
+export SMS_ORG_DIR="$DEV_DIR/sms-digital/"
+export VETTA_PIPELINE_DIR="$VETTA_ORG_DIR/Vetta/platform-vetta-automation"
+export SMS_PIPELINE_DIR="$SMS_ORG_DIR/Tech\ SMS/platform-sms-automation"
 
 # Directories I usually go to
 alias dev='cd $DEV_DIR'
+alias vet='cd $VETTA_ORG_DIR'
+alias sms='cd $SMS_ORG_DIR'
 alias pvetta='cd $VETTA_PIPELINE_DIR'
 alias psms="cd ${SMS_PIPELINE_DIR}"
 
