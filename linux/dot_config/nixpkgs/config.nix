@@ -44,10 +44,10 @@
 
         (import (builtins.fetchTarball {
           url = "https://github.com/NixOS/nixpkgs/archive/refs/heads/nixpkgs-unstable.tar.gz";
-        })).harlequin
+        }) {}).harlequin
         (import (builtins.fetchTarball {
           url = "https://github.com/NixOS/nixpkgs/archive/refs/heads/nixpkgs-unstable.tar.gz";
-        })).python312Packages.harlequin-postgres
+        }) {}).python312Packages.harlequin-postgres
       ];
     };
   };
