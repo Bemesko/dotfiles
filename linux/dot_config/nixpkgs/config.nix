@@ -31,6 +31,7 @@
         # podman
         python312
         python312Packages.pip
+        python312Packages.pipx
         # python312Packages.ansible-core gives issues
         ripgrep
         rustc
@@ -42,12 +43,12 @@
         xdg-utils
         zk
 
-        (import (builtins.fetchTarball {
-          url = "https://github.com/NixOS/nixpkgs/archive/refs/heads/nixpkgs-unstable.tar.gz";
-        }) {}).harlequin
-        (import (builtins.fetchTarball {
-          url = "https://github.com/NixOS/nixpkgs/archive/refs/heads/nixpkgs-unstable.tar.gz";
-        }) {}).python312Packages.harlequin-postgres
+        # (import (builtins.fetchTarball {
+        #   url = "https://github.com/NixOS/nixpkgs/archive/refs/heads/nixpkgs-unstable.tar.gz";
+        # }) {}).harlequin
+        # (import (builtins.fetchTarball {
+        #   url = "https://github.com/NixOS/nixpkgs/archive/refs/heads/nixpkgs-unstable.tar.gz";
+        # }) {}).python312Packages.harlequin-postgres
       ];
     };
   };
