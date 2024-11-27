@@ -41,6 +41,13 @@
         xsel
         xdg-utils
         zk
+
+        (import (builtins.fetchTarball {
+          url = "https://github.com/NixOS/nixpkgs/archive/24.11.tar.gz";
+        })).harlequin
+        (import (builtins.fetchTarball {
+          url = "https://github.com/NixOS/nixpkgs/archive/24.11.tar.gz";
+        })).python312Packages.harlequin-postgres
       ];
     };
   };
