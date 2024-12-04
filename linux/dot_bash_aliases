@@ -24,3 +24,11 @@ alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold 
 alias ku="kubectl"
 
 alias e="explorer.exe"
+
+docker() {
+  if docker_path=$(command -v docker); then
+    "$docker_path" "$@"
+  else
+    podman "$@"
+  fi
+}
