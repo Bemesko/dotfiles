@@ -26,9 +26,5 @@ alias ku="kubectl"
 alias e="explorer.exe"
 
 docker() {
-  if docker_path=$(command -v docker); then
-    "$docker_path" "$@"
-  else
-    podman "$@"
-  fi
+  podman "$@"
 }
