@@ -14,7 +14,7 @@
         chezmoi
         clippy
         # docker is already installed on WSL
-        dotnet-sdk
+        dotnet-sdk_8
         fd
         fzf
         jqp
