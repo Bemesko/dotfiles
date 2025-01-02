@@ -25,6 +25,8 @@ alias ku="kubectl"
 
 alias e="explorer.exe"
 
+alias cvim="chezmoi edit"
+
 docker() {
   podman "$@"
 }
