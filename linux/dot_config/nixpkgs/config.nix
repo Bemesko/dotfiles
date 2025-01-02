@@ -17,6 +17,7 @@
         dotnet-sdk_8
         fd
         fzf
+        go
         jqp
         k9s
         krew
