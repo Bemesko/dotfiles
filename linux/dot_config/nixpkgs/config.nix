@@ -9,7 +9,6 @@
         awscli2
         aws-iam-authenticator
         bash-completion
-        bats
         blesh
         cargo
         chezmoi
