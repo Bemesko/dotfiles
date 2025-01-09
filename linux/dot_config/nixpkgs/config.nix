@@ -19,6 +19,7 @@
         fd
         fzf
         go
+        gum
         jqp
         k9s
         krew
