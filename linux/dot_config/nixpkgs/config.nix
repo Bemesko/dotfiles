@@ -5,7 +5,7 @@
     myPackages = pkgs.buildEnv {
       name = "my-packages";
       paths = [
-        asciinema
+        argocd
         # azure-cli has some authentication issues
         awscli2
         aws-iam-authenticator
