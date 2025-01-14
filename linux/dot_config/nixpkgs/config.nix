@@ -46,7 +46,7 @@
         wslu
         xsel
         xdg-utils
-        yq
+        yq-go
         zk
 
         # (import (builtins.fetchTarball {
