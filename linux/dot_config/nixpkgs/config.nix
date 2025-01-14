@@ -17,7 +17,6 @@
         # docker is already installed on WSL
         delve
         dotnet-sdk_8
-        eksctl
         fd
         fzf
         go
