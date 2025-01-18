@@ -131,11 +131,9 @@ fi
 
 export EDITOR="nvim"
 export PATH="$PATH:~/.cargo/bin/"
+export PATH="$PATH:/home/bernardo/.local/bin"
 export BROWSER="wslview"
 
 eval "$(oh-my-posh init bash --config https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/gruvbox.omp.json)"
 
 [[ ${BLE_VERSION-} ]] && ble-attach
-
-# Created by `pipx` on 2024-11-27 18:11:19
-export PATH="$PATH:/home/bernardo/.local/bin"
