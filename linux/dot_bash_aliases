@@ -27,6 +27,6 @@ alias e="explorer.exe"
 
 alias cvim="chezmoi edit"
 
-docker() {
-  podman "$@"
-}
+# docker() {
+#   podman "$@"
+# }
