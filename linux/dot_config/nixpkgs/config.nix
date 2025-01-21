@@ -37,7 +37,7 @@
         python312
         python312Packages.pip
         python312Packages.pipx
-        # python312Packages.ansible-core gives issues
+        python312Packages.ansible-core gives issues
         ripgrep
         rustc
         terraform
@@ -46,7 +46,7 @@
         wslu
         xsel
         xdg-utils
-        # yq-go
+        yq-go
         zk
 
         # (import (builtins.fetchTarball {
