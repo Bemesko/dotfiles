@@ -31,7 +31,7 @@
         kubernetes-helmPlugins.helm-diff
         lazygit
         neovim
-        nodejs_22
+        # nodejs_22
         oh-my-posh
         # podman
         python312
