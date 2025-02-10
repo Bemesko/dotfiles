@@ -27,6 +27,7 @@
         kubectl
         kubectx
         kubelogin
+        kubelogin-oidc
         kubernetes-helm
         kubernetes-helmPlugins.helm-diff
         lazygit
