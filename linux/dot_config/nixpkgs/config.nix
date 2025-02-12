@@ -21,6 +21,7 @@
         fzf
         go
         gum
+        helm-docs
         jqp
         k9s
         krew
