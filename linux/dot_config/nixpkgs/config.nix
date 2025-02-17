@@ -31,6 +31,7 @@
         kubelogin-oidc
         kubernetes-helm
         kubernetes-helmPlugins.helm-diff
+        kubeseal
         lazygit
         neovim
         # nodejs_22
