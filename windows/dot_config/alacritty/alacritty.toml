@@ -55,7 +55,7 @@ live_config_reload = true
 # args = ["-l"]
 
 [shell]
-program = "ubuntu2204"
+program = "ubuntu"
 
 # ENV
 # All key-value pairs in the [env] section will be added as environment variables for any process spawned by Alacritty, including its shell. Some entries may override variables set by alacritty itself.
