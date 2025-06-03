@@ -1,10 +1,14 @@
 alias xdg-open="wslview"
 
 # Directories I usually go to
-alias dev="cd ~/dev"
+alias dev='cd $DEV_DIR'
+alias vet='cd $VETTA_ORG_DIR'
+alias sms='cd $SMS_ORG_DIR'
+alias pvet='cd $VETTA_PIPELINE_DIR'
+alias psms="cd ${SMS_PIPELINE_DIR}"
 
 # Zettelkasten
-alias ob="nvim /mnt/g/Meu\ Drive/Obsidian/borbsidian/"
+alias ob='nvim /mnt/g/Meu\ Drive/Obsidian/borbsidian/periodic/daily/${CURRENT_DATE}.md'
 
 # Git
 alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
@@ -13,3 +17,9 @@ alias glog="git log --graph --abbrev-commit --decorate --format=format:'%C(bold 
 alias ku="kubectl"
 
 alias e="explorer.exe"
+
+alias cvim="chezmoi edit"
+
+# docker() {
+#   podman "$@"
+# }
